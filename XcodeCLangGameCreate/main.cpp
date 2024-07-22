@@ -19,5 +19,23 @@ int main(){
     
     
     std::cout << "数当てゲームへようこそ!" << std::endl;
+    std::cout << "1から100までの数を当ててください" << std::endl;
     
+    //ユーザーが正しい数当てるまで、繰り返す
+    
+    do{
+        std::cout << "予想を入力してください :";
+        std::cin >> guess;
+        attempts++;
+        if (guess > targetNumber) {
+            std::cout << "それは大きすぎます。もう一度試してください。" << std::endl;
+        } else if (guess < targetNumber) {
+            std::cout << "それは小さすぎます。もう一度試してください。" << std::endl;
+        } else {
+            std::cout << "おめでとうございます！正解です！" << std::endl;
+            std::cout << "あなたは " << attempts << " 回で当てました。" << std::endl;
+        }
+    } while (guess != targetNumber);
+    
+    return 0;
 }
